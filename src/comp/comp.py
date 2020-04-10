@@ -1,6 +1,7 @@
 # The following list comprehension exercises will make use of the
 # defined Human class.
 import math
+import re
 
 
 class Human:
@@ -49,9 +50,12 @@ print(b)
 
 # # # Write a list comprehension that creates a list of names of everyone
 # # # whose name starts with any letter between 'C' and 'G' inclusive.
-# # print("Starts between C and G, inclusive:")
-# # c = []
-# # print(c)
+print("Starts between C and G, inclusive:")
+
+c = [human.name for human in humans if re.search(
+    r'[c-g]', human.name[0].lower())]
+
+print(c)
 
 # # # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
